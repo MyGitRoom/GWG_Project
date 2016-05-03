@@ -32,6 +32,7 @@
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(changePic) userInfo:nil repeats:YES];
     [self.view addSubview:self.imagev];
     [self createCloudTag] ;
+    NSLog(@"测试一下git");
     
     
 }
