@@ -33,6 +33,7 @@
     [self.view addSubview:self.imagev];
     [self createCloudTag] ;
     NSLog(@"测试一下git");
+    NSLog(@"测试一下gitbbb");
     
     
 }
