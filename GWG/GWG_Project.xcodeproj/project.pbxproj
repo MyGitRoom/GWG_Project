@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		3F1B888E1CDA33B70071E862 /* RadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B888C1CDA33B70071E862 /* RadioViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B88911CDA33D00071E862 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88901CDA33D00071E862 /* DataModel.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B88941CDA33DB0071E862 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88931CDA33DB0071E862 /* MyTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -23,6 +24,19 @@
 		3F418EEC1CDA196F004E0BF4 /* TypeOfMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEB1CDA196F004E0BF4 /* TypeOfMovieModel.m */; settings = {ASSET_TAGS = (); }; };
 		3F418EEF1CDA19B5004E0BF4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEE1CDA19B5004E0BF4 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3F418EF21CDA1A5D004E0BF4 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EF11CDA1A5D004E0BF4 /* NetWorkRequestManager.m */; settings = {ASSET_TAGS = (); }; };
+=======
+		3F418ED41CDA18B4004E0BF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED31CDA18B4004E0BF4 /* AppDelegate.m */; };
+		3F418ED71CDA18C9004E0BF4 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED61CDA18C9004E0BF4 /* MainNavigationController.m */; };
+		3F418EDA1CDA1907004E0BF4 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED91CDA1907004E0BF4 /* MovieViewController.m */; };
+		3F418EDD1CDA1914004E0BF4 /* TypeOfMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EDC1CDA1914004E0BF4 /* TypeOfMovieViewController.m */; };
+		3F418EE01CDA1920004E0BF4 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EDF1CDA1920004E0BF4 /* MovieDetailViewController.m */; };
+		3F418EE31CDA1941004E0BF4 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EE21CDA1941004E0BF4 /* MovieCollectionViewCell.m */; };
+		3F418EE61CDA1951004E0BF4 /* TypeOfMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EE51CDA1951004E0BF4 /* TypeOfMovieTableViewCell.m */; };
+		3F418EE91CDA1961004E0BF4 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EE81CDA1961004E0BF4 /* MovieModel.m */; };
+		3F418EEC1CDA196F004E0BF4 /* TypeOfMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEB1CDA196F004E0BF4 /* TypeOfMovieModel.m */; };
+		3F418EEF1CDA19B5004E0BF4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEE1CDA19B5004E0BF4 /* MainViewController.m */; };
+		3F418EF21CDA1A5D004E0BF4 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EF11CDA1A5D004E0BF4 /* NetWorkRequestManager.m */; };
+>>>>>>> 9ea3830b28c4e603c9a5856945fc192b6ebf0a80
 		3F418EF81CDA1AE8004E0BF4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EF71CDA1AE8004E0BF4 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3F4E861C1CD361EE00B9410A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E861B1CD361EE00B9410A /* main.m */; };
 		3F4E86251CD361EE00B9410A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4E86231CD361EE00B9410A /* Main.storyboard */; };
@@ -296,10 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				3F4E86541CD3630700B9410A /* Base */,
-				3F418ED21CDA18B4004E0BF4 /* AppDelegate.h */,
-				3F418ED31CDA18B4004E0BF4 /* AppDelegate.m */,
-				3F418ED51CDA18C9004E0BF4 /* MainNavigationController.h */,
-				3F418ED61CDA18C9004E0BF4 /* MainNavigationController.m */,
 				3F4E86531CD362F100B9410A /* Resource */,
 				3F4E86521CD362E200B9410A /* Tool */,
 				3FB3D8A11CD376A40058CC5B /* Reading */,
@@ -415,6 +425,10 @@
 		3F4E86541CD3630700B9410A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				3F418ED21CDA18B4004E0BF4 /* AppDelegate.h */,
+				3F418ED31CDA18B4004E0BF4 /* AppDelegate.m */,
+				3F418ED51CDA18C9004E0BF4 /* MainNavigationController.h */,
+				3F418ED61CDA18C9004E0BF4 /* MainNavigationController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
