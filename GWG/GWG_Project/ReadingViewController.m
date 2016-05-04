@@ -37,6 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"1111");
 
     self.view.backgroundColor = [UIColor colorWithRed:0.820 green:0.750 blue:0.376 alpha:1.000];
     _readingArray = [NSMutableArray array];
