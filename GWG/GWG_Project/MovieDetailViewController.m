@@ -21,6 +21,7 @@
   
     self.navigationController.navigationBarHidden = NO ;
 
+//    self.navigationController.hidesBarsOnSwipe = NO ;
 }
 
 - (void)viewDidLoad {
