@@ -27,20 +27,16 @@
     return  _array ;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+  
+    self.navigationController.navigationBarHidden = NO ;
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    self.view.backgroundColor = [UIColor colorWithRed:0.464 green:0.471 blue:0.515 alpha:1.000];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(5,15, 40, 30);
-    [btn setTitle:@"返回" forState:UIControlStateNormal];
-    [self.view addSubview:btn];
-    [btn addTarget: self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     
-
-    
-    
-    
+    self.navigationController.navigationBarHidden = NO ;
     [self getData];
     
     //调用创建collectionView 的方法
@@ -104,7 +100,7 @@
     flowLayout.sectionInset  = UIEdgeInsetsMake(2, 10, 10, 10);
     
     
-    self.collectView = [[UICollectionView alloc]initWithFrame:CGRectMake(0,50, KScreenWidth, KScreenHeight-50) collectionViewLayout:flowLayout];
+    self.collectView = [[UICollectionView alloc]initWithFrame:CGRectMake(0,0, KScreenWidth, KScreenHeight) collectionViewLayout:flowLayout];
     self.collectView.backgroundColor = [UIColor colorWithWhite:0.908 alpha:1.000];
     
     self.collectView.delegate = self ;
@@ -122,8 +118,8 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-
-    return  self.array.count-5 ;
+//    NSInteger i = self.array.count - 14 ;
+    return  self.array.count - 6 ;
 
 }
 
@@ -154,7 +150,8 @@
   
     typeMovie.dic = dict ;
 //    NSLog(@"%@",typeMovie.dic);
-    [self presentViewController:typeMovie animated:YES completion:nil];
+//    [self presentViewController:typeMovie animated:YES completion:nil];
+    [self.navigationController pushViewController:typeMovie animated:YES];
    
     
     

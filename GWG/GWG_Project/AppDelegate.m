@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MainNavigationController.h"
 @interface AppDelegate ()
 
 @end
@@ -22,9 +22,18 @@
     
     MainViewController *mainVc = [[MainViewController alloc]init];
     
-    self.window.rootViewController = mainVc ;
+    MainNavigationController *nav = [[MainNavigationController alloc]initWithRootViewController:mainVc];
+    
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainVc];
+
+//    nav.navigationBar.barTintColor = [UIColor greenColor];
+//    nav.navigationBar.translucent = NO ;
+//    nav.navigationItem.title = @"标题";
+    
+    self.window.rootViewController = nav ;
     
     
+
     
     
     
