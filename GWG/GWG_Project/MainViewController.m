@@ -68,7 +68,16 @@
     self.i = 1 ;
     self.imagev.image = [UIImage imageNamed:@"1.jpg"];
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(changePic) userInfo:nil repeats:YES];
+    
+    //添加毛玻璃效果
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *effectiview = [[UIVisualEffectView alloc]initWithEffect:blur];
+    effectiview.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
+    effectiview.alpha = 0.8 ;
     [self.view addSubview:self.imagev];
+    [self.view addSubview:effectiview];
+    
+    //创建标签云
     [self createCloudTag] ;
     
     //加载数据
@@ -190,9 +199,9 @@
 #pragma mark- 添加视图
 - (void) loadTodayView
 {
-    self.vi = [[UIView alloc]initWithFrame:CGRectMake(KScreenWidth/2-KScreenWidth/1.3/2, KScreenHeight/2-KScreenHeight/1.3/2-50, KScreenWidth/1.3, KScreenHeight/1.3)];
-    _vi.backgroundColor = [UIColor whiteColor];
-    //    _vi.alpha = .8;
+    self.vi = [[UIView alloc]initWithFrame:CGRectMake(KScreenWidth/2-KScreenWidth/1.3/2, KScreenHeight/2-KScreenHeight/1.3/2-40, KScreenWidth/1.3, KScreenHeight/1.38)];
+    _vi.backgroundColor = [UIColor colorWithWhite:0.819 alpha:1];
+        _vi.alpha = .8;
     _vi.layer.cornerRadius = 7;
     _vi.layer.masksToBounds = YES;
     [self.view addSubview:_vi];
