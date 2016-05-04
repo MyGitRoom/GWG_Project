@@ -22,19 +22,21 @@
 @end
 
 @implementation MainViewController
+-(void)viewWillAppear:(BOOL)animated {
+
+    self.navigationController.navigationBarHidden = YES ;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBarHidden = YES ;
     self.imagev = [[UIImageView alloc]initWithFrame:self.view.frame];
     self.i = 1 ;
     self.imagev.image = [UIImage imageNamed:@"1.jpg"];
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(changePic) userInfo:nil repeats:YES];
     [self.view addSubview:self.imagev];
     [self createCloudTag] ;
-    NSLog(@"测试一下git");
-    NSLog(@"测试一下gitaaaa");
-    NSLog(@"测试一下分支");
     
     
 }
@@ -82,7 +84,8 @@
         MovieViewController *movieVc = [[MovieViewController alloc]init];
         
         //模态跳转
-        [self presentViewController:movieVc animated:YES completion:nil];
+//        [self presentViewController:movieVc animated:YES completion:nil];
+        [self.navigationController pushViewController:movieVc animated:YES];
     
     }else if (btn.tag ==1){
     

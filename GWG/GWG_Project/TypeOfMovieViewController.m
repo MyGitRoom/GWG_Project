@@ -32,22 +32,14 @@
     }
     
 
+
 - (void)viewDidLoad {
         [super viewDidLoad];
-        
-//    self.view.backgroundColor = [UIColor blueColor];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(back:)];
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, 64)];
     
-    view.backgroundColor = [UIColor blueColor];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(5,20, 60, 30) ;
-    [btn setTitle:@"返回" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     
-    [view addSubview:btn];
-    [self.view addSubview:view];
-    self.tab = [[UITableView alloc]initWithFrame:CGRectMake(0, 69, KScreenWidth,KScreenHeight-68) style:UITableViewStylePlain];
+    self.navigationController.navigationBarHidden = NO ;
+    
+    self.tab = [[UITableView alloc]initWithFrame:CGRectMake(0,0, KScreenWidth,KScreenHeight) style:UITableViewStylePlain];
     
         self.tab.delegate = self ;
         self.tab.dataSource = self ;
@@ -130,18 +122,53 @@
     dic = @{@"Content-Type":@"application/x-www-form-urlencoded",@"id":self.array[indexPath.row].identifier} ;
     movieDeatilVc.dic = dic;
     
-    [self presentViewController:movieDeatilVc animated:YES completion:nil];
+//    [self presentViewController:movieDeatilVc animated:YES completion:nil];
+    [self.navigationController pushViewController:movieDeatilVc animated:YES];
 
 
 
 }
 
+//给cell添加动画
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    //设置Cell的动画效果为3D效果
+//    //设置x和y的初始值为0.1；
+//    cell.layer.transform = CATransform3DMakeScale(0.5, 1, 1);
+//    //x和y的最终值为1
+//    [UIView animateWithDuration:0.5 animations:^{
+//        cell.layer.transform = CATransform3DMakeScale(1, 1, 1);
+//    }];
+//}
 
-//实现点击返回按钮的功能
--(void)back:(UIButton *)btn{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//
+//
+//    CGFloat offsetY = scrollView.contentOffset.y + _tab.contentInset.top;//注意
+//    CGFloat panTranslationY = [scrollView.panGestureRecognizer translationInView:self.tab].y;
+//    
+//    if (offsetY > 64) {
+//        if (panTranslationY > 0) { //下滑趋势，显示
+//            [self.navigationController setNavigationBarHidden:NO animated:YES];
+//        }
+//        else {  //上滑趋势，隐藏
+//            [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        }
+//    }
+//    else {
+//        [self.navigationController setNavigationBarHidden:NO animated:YES];
+//    }
+//}
+//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    self.navigationController.navigationBarHidden = YES ;
+//}
+//
+//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//
+//    self.navigationController.navigationBarHidden = NO ;
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
