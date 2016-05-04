@@ -14,15 +14,19 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
     MainViewController *mainVc = [[MainViewController alloc]init];
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:mainVc];
     
-    self.window.rootViewController = mainVc ;
+    nav.navigationBar.barStyle = UIBarStyleBlack;
+//    nav.navigationBarHidden = YES;
+    
+    self.window.rootViewController = nav ;
+    
     
     
     
