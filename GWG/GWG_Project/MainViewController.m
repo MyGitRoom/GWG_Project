@@ -34,6 +34,7 @@
     [self createCloudTag] ;
     NSLog(@"测试一下git");
     NSLog(@"测试一下gitaaaa");
+    NSLog(@"测试");
     
     
 }
