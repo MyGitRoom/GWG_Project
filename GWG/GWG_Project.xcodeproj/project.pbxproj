@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		05AEFE0C1CD4CE2100596863 /* TypeOfMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AEFE0B1CD4CE2100596863 /* TypeOfMovieViewController.m */; };
 		05AEFE0F1CD4DC3A00596863 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AEFE0E1CD4DC3A00596863 /* MovieDetailViewController.m */; };
+		3F1B883B1CD9D5960071E862 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B883A1CD9D5960071E862 /* Message.m */; settings = {ASSET_TAGS = (); }; };
+		3F1B883E1CD9D6350071E862 /* NetworkingRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B883D1CD9D6350071E862 /* NetworkingRequestManager.m */; settings = {ASSET_TAGS = (); }; };
+		3F1B88811CD9DD8F0071E862 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B887F1CD9DD8F0071E862 /* MyTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		3F1B88851CD9EA0D0071E862 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88841CD9EA0D0071E862 /* DataModel.m */; settings = {ASSET_TAGS = (); }; };
 		3F4E861C1CD361EE00B9410A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E861B1CD361EE00B9410A /* main.m */; };
 		3F4E861F1CD361EE00B9410A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E861E1CD361EE00B9410A /* AppDelegate.m */; };
 		3F4E86221CD361EE00B9410A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E86211CD361EE00B9410A /* ViewController.m */; };
@@ -48,7 +52,6 @@
 		3FC743A41CD47E4700707AFB /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC743921CD47E4700707AFB /* UIImageView+HighlightedWebCache.m */; };
 		3FC743A51CD47E4700707AFB /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC743941CD47E4700707AFB /* UIImageView+WebCache.m */; };
 		3FC743A61CD47E4700707AFB /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC743961CD47E4700707AFB /* UIView+WebCacheOperation.m */; };
-		3FC743A91CD47F0900707AFB /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC743A81CD47F0900707AFB /* NetWorkRequestManager.m */; };
 		3FC743B21CD4A34100707AFB /* TypeOfMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC743B11CD4A34100707AFB /* TypeOfMovieTableViewCell.m */; };
 		3FC743B51CD4A35600707AFB /* TypeOfMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC743B41CD4A35600707AFB /* TypeOfMovieModel.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,14 @@
 		05AEFE0B1CD4CE2100596863 /* TypeOfMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeOfMovieViewController.m; sourceTree = "<group>"; };
 		05AEFE0D1CD4DC3A00596863 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
 		05AEFE0E1CD4DC3A00596863 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
+		3F1B88391CD9D5960071E862 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		3F1B883A1CD9D5960071E862 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		3F1B883C1CD9D6350071E862 /* NetworkingRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingRequestManager.h; sourceTree = "<group>"; };
+		3F1B883D1CD9D6350071E862 /* NetworkingRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingRequestManager.m; sourceTree = "<group>"; };
+		3F1B887E1CD9DD8F0071E862 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		3F1B887F1CD9DD8F0071E862 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		3F1B88831CD9EA0D0071E862 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		3F1B88841CD9EA0D0071E862 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		3F4E86171CD361EE00B9410A /* GWG_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWG_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4E861B1CD361EE00B9410A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F4E861D1CD361EE00B9410A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,8 +164,6 @@
 		3FC743941CD47E4700707AFB /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3FC743951CD47E4700707AFB /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3FC743961CD47E4700707AFB /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		3FC743A71CD47F0900707AFB /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequestManager.h; sourceTree = "<group>"; };
-		3FC743A81CD47F0900707AFB /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequestManager.m; sourceTree = "<group>"; };
 		3FC743B01CD4A34000707AFB /* TypeOfMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeOfMovieTableViewCell.h; sourceTree = "<group>"; };
 		3FC743B11CD4A34100707AFB /* TypeOfMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeOfMovieTableViewCell.m; sourceTree = "<group>"; };
 		3FC743B31CD4A35600707AFB /* TypeOfMovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeOfMovieModel.h; sourceTree = "<group>"; };
@@ -303,10 +312,10 @@
 		3F4E86521CD362E200B9410A /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				3FC743A71CD47F0900707AFB /* NetWorkRequestManager.h */,
-				3FC743A81CD47F0900707AFB /* NetWorkRequestManager.m */,
 				3FB3D8A81CD377B70058CC5B /* PrefixHeader.pch */,
 				3FB3D8A91CD377EC0058CC5B /* WidthAndHeight.h */,
+				3F1B883C1CD9D6350071E862 /* NetworkingRequestManager.h */,
+				3F1B883D1CD9D6350071E862 /* NetworkingRequestManager.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -358,6 +367,8 @@
 		3F4E86581CD3635600B9410A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F1B88391CD9D5960071E862 /* Message.h */,
+				3F1B883A1CD9D5960071E862 /* Message.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -448,6 +459,8 @@
 		3FB3D89E1CD376770058CC5B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F1B887E1CD9DD8F0071E862 /* MyTableViewCell.h */,
+				3F1B887F1CD9DD8F0071E862 /* MyTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -464,6 +477,8 @@
 		3FB3D8A01CD376860058CC5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F1B88831CD9EA0D0071E862 /* DataModel.h */,
+				3F1B88841CD9EA0D0071E862 /* DataModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -700,15 +715,18 @@
 				3FC743981CD47E4700707AFB /* NSData+ImageContentType.m in Sources */,
 				3FC743741CD4784500707AFB /* MovieModel.m in Sources */,
 				05AEFE0C1CD4CE2100596863 /* TypeOfMovieViewController.m in Sources */,
+				3F1B883E1CD9D6350071E862 /* NetworkingRequestManager.m in Sources */,
 				3FC7439B1CD47E4700707AFB /* SDWebImageDecoder.m in Sources */,
 				3FB3D8B21CD379880058CC5B /* DBSphereView.m in Sources */,
-				3FC743A91CD47F0900707AFB /* NetWorkRequestManager.m in Sources */,
 				3FC743A41CD47E4700707AFB /* UIImageView+HighlightedWebCache.m in Sources */,
+				3F1B883B1CD9D5960071E862 /* Message.m in Sources */,
 				3F4E861C1CD361EE00B9410A /* main.m in Sources */,
 				3FC7439C1CD47E4700707AFB /* SDWebImageDownloader.m in Sources */,
 				3FC7439A1CD47E4700707AFB /* SDWebImageCompat.m in Sources */,
+				3F1B88811CD9DD8F0071E862 /* MyTableViewCell.m in Sources */,
 				3FB3D8C81CD3886D0058CC5B /* ReadingViewController.m in Sources */,
 				3FC743A11CD47E4700707AFB /* UIImage+GIF.m in Sources */,
+				3F1B88851CD9EA0D0071E862 /* DataModel.m in Sources */,
 				3FC743A21CD47E4700707AFB /* UIImage+MultiFormat.m in Sources */,
 				3FB3D8B51CD37E080058CC5B /* MainNavigation.m in Sources */,
 				3FC743B21CD4A34100707AFB /* TypeOfMovieTableViewCell.m in Sources */,

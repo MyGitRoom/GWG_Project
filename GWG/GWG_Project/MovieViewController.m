@@ -54,6 +54,7 @@
 
 
 //获取数据
+
 -(void)getData {
 
   [NetWorkRequestManager requestWithType:GET urlString:@"http://114.215.104.21/v130/singles/groupcat" ParDic:nil finish:^(NSData *data) {

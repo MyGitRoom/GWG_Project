@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Message.h"
 
 @interface MainViewController : UIViewController
+
+@property (nonatomic, strong) AVPlayer * player;
+@property (nonatomic ,strong) AVPlayerItem * playerItem;
 
 @end

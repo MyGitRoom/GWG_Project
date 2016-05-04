@@ -59,10 +59,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
       [self.view addSubview:self.tab];
     
-        [self getData];
-        
+//        [self getData];
+    
     }
     //获取数据
+
     -(void)getData{
 //        NSLog(@"%@",self.dic);
         self.mbHUD = [[MBProgressHUD alloc]initWithView:self.tab];
@@ -90,7 +91,7 @@
         
         
     }
-    
+
     
 #pragma mark tableview 的代理方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -147,6 +148,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

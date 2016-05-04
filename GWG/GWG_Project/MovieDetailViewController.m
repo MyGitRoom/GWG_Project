@@ -7,8 +7,6 @@
 //
 
 #import "MovieDetailViewController.h"
-#import "NetWorkRequestManager.h"
-#import "MBProgressHUD.h"
 @interface MovieDetailViewController ()<UIWebViewDelegate>
 
 @property (nonatomic ,strong) MBProgressHUD *mbHUD ;
@@ -30,7 +28,7 @@
     [self.view addSubview:view ];
     
     self.wed = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, KScreenWidth, KScreenHeight-64)];
-    [self getData];
+//    [self getData];
     [self.view addSubview:self.wed];
 
 
@@ -38,13 +36,13 @@
 
 }
 
-
+/*
 -(void)getData{
 
     self.mbHUD = [[MBProgressHUD alloc]initWithView:self.wed];
     [self.mbHUD show:YES];
     [self.wed addSubview:self.mbHUD];
-   [NetWorkRequestManager requestWithType:POST urlString:@"http://mark.intlime.com/singles/detail" ParDic:self.dic finish:^(NSData *data) {
+   [NetworkingRequestManager requestWithType:POST urlString:@"http://mark.intlime.com/singles/detail" ParDic:self.dic finish:^(NSData *data) {
 
        NSDictionary *datadic = [NSDictionary dictionary];
        datadic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -74,7 +72,7 @@
     
 
  }
-
+*/
 //点击返回按钮实现的方法
 -(void)back:(UIButton *)btn{
     
