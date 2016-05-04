@@ -92,6 +92,7 @@
         ReadingViewController *readingVc = [[ReadingViewController alloc]init];
         //模态跳转
         [self presentViewController:readingVc animated:YES completion:nil];
+        
     }else if (btn.tag == 2){
     
         RadioViewController *radioVc = [[RadioViewController alloc]init];

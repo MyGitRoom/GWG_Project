@@ -31,6 +31,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden=NO;
+
+//    self.navigationController.navigationBarHidden = NO ;
+//    self.tabBarController.hidesBottomBarWhenPushed = NO ;
     [[[self.navigationController.navigationBar subviews]objectAtIndex:0]setAlpha:0];
     
 }
