@@ -9,7 +9,11 @@
     "B9A4040B1F3DB9211FEE048C2962BCEA48BB2CDF" : 0,
     "3ae940f3-8410-4859-82cb-97a2b19ad8f4++3340" : 0
   },
+<<<<<<< HEAD
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0DFDD546-7926-4996-B9EE-35E05697CD23",
+=======
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E5700D7C-54C2-4602-9731-26599C7371FB",
+>>>>>>> f02d6944b26e0f9cc916e691471a9534427a92cd
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "B9A4040B1F3DB9211FEE048C2962BCEA48BB2CDF" : "GWG_Project\/",
     "3ae940f3-8410-4859-82cb-97a2b19ad8f4++3340" : "GWG_Project\/GWG\/GWG_Project\/MBProgressHUD%E5%89%AF%E6%9C%AC\/"
@@ -24,7 +28,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3ae940f3-8410-4859-82cb-97a2b19ad8f4++3340"
     },
     {
+<<<<<<< HEAD
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MyGitRoom\/GWG_Project.git",
+=======
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MyGitRoom\/GWG_Project",
+>>>>>>> f02d6944b26e0f9cc916e691471a9534427a92cd
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B9A4040B1F3DB9211FEE048C2962BCEA48BB2CDF"
     }
