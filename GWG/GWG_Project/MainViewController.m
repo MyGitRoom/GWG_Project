@@ -23,14 +23,14 @@
 
 @implementation MainViewController
 -(void)viewWillAppear:(BOOL)animated {
-
-    self.navigationController.navigationBarHidden = YES ;
+ self.navigationController.navigationBarHidden = YES ;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationController.navigationBarHidden = YES ;
+
+   
     self.imagev = [[UIImageView alloc]initWithFrame:self.view.frame];
     self.i = 1 ;
     self.imagev.image = [UIImage imageNamed:@"1.jpg"];
@@ -91,17 +91,17 @@
     
         ReadingViewController *readingVc = [[ReadingViewController alloc]init];
         //模态跳转
-        [self presentViewController:readingVc animated:YES completion:nil];
+        [self.navigationController pushViewController:readingVc animated:YES];
     }else if (btn.tag == 2){
     
         RadioViewController *radioVc = [[RadioViewController alloc]init];
         //模态跳转
-        [self presentViewController:radioVc animated:YES completion:nil];
+        [self.navigationController pushViewController:radioVc animated:YES];
     }else{
     
         TechnologyViewController *technoloVc =[[TechnologyViewController alloc]init];
         //模态跳转
-        [self presentViewController:technoloVc animated:YES completion:nil];
+        [self.navigationController pushViewController:technoloVc animated:YES];
     }
     
     
