@@ -7,24 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		3F1B888E1CDA33B70071E862 /* RadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B888C1CDA33B70071E862 /* RadioViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B88911CDA33D00071E862 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88901CDA33D00071E862 /* DataModel.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B88941CDA33DB0071E862 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88931CDA33DB0071E862 /* MyTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B88971CDA360F0071E862 /* RadioDetaillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88961CDA360F0071E862 /* RadioDetaillViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B889A1CDA39B60071E862 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88991CDA39B60071E862 /* Message.m */; settings = {ASSET_TAGS = (); }; };
-		3F418ED41CDA18B4004E0BF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED31CDA18B4004E0BF4 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		3F418ED71CDA18C9004E0BF4 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED61CDA18C9004E0BF4 /* MainNavigationController.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EDA1CDA1907004E0BF4 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED91CDA1907004E0BF4 /* MovieViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EDD1CDA1914004E0BF4 /* TypeOfMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EDC1CDA1914004E0BF4 /* TypeOfMovieViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EE01CDA1920004E0BF4 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EDF1CDA1920004E0BF4 /* MovieDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EE31CDA1941004E0BF4 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EE21CDA1941004E0BF4 /* MovieCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EE61CDA1951004E0BF4 /* TypeOfMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EE51CDA1951004E0BF4 /* TypeOfMovieTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EE91CDA1961004E0BF4 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EE81CDA1961004E0BF4 /* MovieModel.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EEC1CDA196F004E0BF4 /* TypeOfMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEB1CDA196F004E0BF4 /* TypeOfMovieModel.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EEF1CDA19B5004E0BF4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEE1CDA19B5004E0BF4 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3F418EF21CDA1A5D004E0BF4 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EF11CDA1A5D004E0BF4 /* NetWorkRequestManager.m */; settings = {ASSET_TAGS = (); }; };
-
 		3F418ED41CDA18B4004E0BF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED31CDA18B4004E0BF4 /* AppDelegate.m */; };
 		3F418ED71CDA18C9004E0BF4 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED61CDA18C9004E0BF4 /* MainNavigationController.m */; };
 		3F418EDA1CDA1907004E0BF4 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED91CDA1907004E0BF4 /* MovieViewController.m */; };
@@ -36,7 +23,6 @@
 		3F418EEC1CDA196F004E0BF4 /* TypeOfMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEB1CDA196F004E0BF4 /* TypeOfMovieModel.m */; };
 		3F418EEF1CDA19B5004E0BF4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EEE1CDA19B5004E0BF4 /* MainViewController.m */; };
 		3F418EF21CDA1A5D004E0BF4 /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EF11CDA1A5D004E0BF4 /* NetWorkRequestManager.m */; };
-
 		3F418EF81CDA1AE8004E0BF4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418EF71CDA1AE8004E0BF4 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3F4E861C1CD361EE00B9410A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E861B1CD361EE00B9410A /* main.m */; };
 		3F4E86251CD361EE00B9410A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4E86231CD361EE00B9410A /* Main.storyboard */; };
@@ -817,7 +803,7 @@
 				TargetAttributes = {
 					3F4E86161CD361EE00B9410A = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = U33AYCW5GV;
+						DevelopmentTeam = 5LXY5GA6GX;
 					};
 					3F4E862F1CD361EE00B9410A = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -1091,7 +1077,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GWG_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.EDC";
+				PRODUCT_BUNDLE_IDENTIFIER = fcgfgcgcg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1105,7 +1091,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GWG_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.EDC";
+				PRODUCT_BUNDLE_IDENTIFIER = fcgfgcgcg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

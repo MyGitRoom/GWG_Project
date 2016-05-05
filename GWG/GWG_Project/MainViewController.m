@@ -13,7 +13,7 @@
 #import "TechnologyViewController.h"
 #import "RadioViewController.h"
 #import "MovieViewController.h"
-
+#import "UIImageView+WebCache.h"
 #define DAILYURL @"http://dict-mobile.iciba.com/interface/index.php?c=sentence&m=getsentence&client=1&type=1&field=1,2,3,4,5,6,7,8,9,10,11,12,13&timestamp=1434767570&sign=6124a62ff73a033a&uuid=3dd23ff24ea543c1bdca57073d0540e1&uid="
 @interface MainViewController ()
 
@@ -26,10 +26,12 @@
 @property (nonatomic, strong) UILabel * textLabel;
 @property (nonatomic, strong) NSMutableArray * msgArray;
 @property (nonatomic, strong) NSString * tagMP3;
-
+@property (nonatomic ,assign)  NSUInteger dSeconds ;//音频播放的时间
 @property (nonatomic, strong) UIButton * mainBtn;
 @property (nonatomic, strong) UIButton * borderBtn;
 
+@property (nonatomic ,strong) NSTimer *Scaletimer ;//创建一个定时器控制按钮动画
+@property (nonatomic ,assign) NSInteger  t ;//记录音频播放时间
 @end
 
 @implementation MainViewController
@@ -54,10 +56,12 @@
 }
 
 
+#pragma mark- 隐藏导航栏
 -(void)viewWillAppear:(BOOL)animated {
  self.navigationController.navigationBarHidden = YES ;
     
 }
+
 
 #pragma mark- 加载视图
 - (void)viewDidLoad {
@@ -68,24 +72,30 @@
     self.i = 1 ;
     self.imagev.image = [UIImage imageNamed:@"1.jpg"];
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(changePic) userInfo:nil repeats:YES];
+    
+    //添加毛玻璃效果
+    
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *effectvi = [[UIVisualEffectView alloc]initWithEffect:blur];
+    effectvi.frame = CGRectMake(0, 0,KScreenWidth  , KScreenHeight);
+    effectvi.alpha = .95;
     [self.view addSubview:self.imagev];
+    [self.view addSubview:effectvi];
+
     
-    //往底层页面添加毛玻璃效果
+
+//    [self.view addSubview:effectiview];
     
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    
-    UIVisualEffectView *effectview = [[UIVisualEffectView alloc]initWithEffect:blur];
-    effectview.frame =  self.view.frame ;
-    
-    [self.imageV addSubview:effectview];
-    
-    
+    //创建标签云
+
     [self createCloudTag] ;
     
     //加载数据
     [self requestData];
     
 }
+
+
 #pragma mark- 创建云标签
 -(void)createCloudTag{
     self.sphereView = [[DBSphereView alloc]initWithFrame:CGRectMake(30, KScreenHeight-64-49, 100, 100)];
@@ -110,7 +120,10 @@
 
 
 }
-//点击按钮执行的方法
+
+
+
+#pragma mark- 点击标签云按钮执行的方法
 -(void)jump:(UIButton *)btn {
     //点击按钮定时器停止
     [self.sphereView timerStop];
@@ -147,10 +160,11 @@
     }
     
     
-
 }
 
-//切换图片的方法
+
+
+#pragma mark- 切换图片的方法
 -(void)changePic{
     
     
@@ -161,6 +175,8 @@
     }
     _i++ ;
 }
+
+
 
 #pragma mark- 请求数据
 - (void) requestData
@@ -198,12 +214,16 @@
     
 }
 
+
+
 #pragma mark- 添加视图
 - (void) loadTodayView
 {
-    self.vi = [[UIView alloc]initWithFrame:CGRectMake(KScreenWidth/2-KScreenWidth/1.3/2, KScreenHeight/2-KScreenHeight/1.3/2-50, KScreenWidth/1.3, KScreenHeight/1.3)];
-    _vi.backgroundColor = [UIColor colorWithWhite:0.812 alpha:1.000];
-        _vi.alpha = 0.8;
+
+    self.vi = [[UIView alloc]initWithFrame:CGRectMake(KScreenWidth/2-KScreenWidth/1.3/2, KScreenHeight/2-KScreenHeight/1.3/2-40, KScreenWidth/1.3, KScreenHeight/1.38)];
+    _vi.backgroundColor = [UIColor colorWithWhite:0.850 alpha:1.000];
+//        _vi.alpha = .8;
+
     _vi.layer.cornerRadius = 7;
     _vi.layer.masksToBounds = YES;
     [self.view addSubview:_vi];
@@ -213,6 +233,7 @@
 //创建视图上控件
 - (void) createControls
 {
+    
     //取数据
     Message * msg = [self.msgArray lastObject];
     self.tagMP3 = msg.tts;
@@ -223,80 +244,105 @@
     
     //图片
     self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 40+20, self.vi.frame.size.width, self.vi.frame.size.width*0.618)];
-    self.imageV.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:msg.picture]]];
+
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:msg.picture]];
+//    self.imageV.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:msg.picture]]];
     [self.vi addSubview:self.imageV];
     
     //中英文对照
     self.textLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, self.imageV.frame.origin.y + self.vi.frame.size.width*0.618 + 10, self.vi.frame.size.width - 20, 100)];
     _textLabel.numberOfLines = 20;
     _textLabel.font = [UIFont fontWithName:@"MarkerFelt-Thin" size:14];
+//    _textLabel.font = [UIFont fontWithName:@"TimesNewRomanPS-ItalicM" size:12];
     NSString * text1 = [msg.content stringByAppendingString:@"\n\n"];
     NSString * text2 = [text1 stringByAppendingString:msg.note];
     _textLabel.text = text2;
     [self.vi addSubview:_textLabel];
-    
+
     //播放音频按钮
     self.mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _mainBtn.layer.cornerRadius = 50;
+    _mainBtn.layer.cornerRadius = KScreenWidth*0.217/2;
     _mainBtn.layer.masksToBounds = YES;
-    _mainBtn.layer.borderWidth = 2;
-    
-    UIColor * color = [self randomColor];
+    _mainBtn.layer.borderWidth = 0;
+//    NSLog(@"%f --%f",_mainBtn.center.x ,_mainBtn.center.y);
+   
     [_mainBtn setTitle:@"Listen me" forState:UIControlStateNormal];
-    _mainBtn.frame = CGRectMake(self.vi.frame.size.width/2-50, self.textLabel.frame.size.height + self.imageV.frame.size.height + 120, 100, 100);
+    _mainBtn.titleLabel.textColor = [UIColor colorWithWhite:0.911 alpha:1.000];
+    _mainBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    _mainBtn.frame = CGRectMake(KScreenWidth/2- 45, self.vi.frame.size.height -100, KScreenWidth*0.217, KScreenWidth*0.217);
+     _mainBtn.center = CGPointMake(self.vi.center.x-KScreenWidth*0.217/2, self.vi.frame.size.height -KScreenWidth*0.217/2-8) ;
     [_mainBtn addTarget:self action:@selector(touchChange:) forControlEvents:UIControlEventTouchUpInside];
     [self.vi addSubview:_mainBtn];
-    _mainBtn.backgroundColor = [UIColor colorWithRed:0.996 green:0.824 blue:0.224 alpha:1.000];
+    _mainBtn.backgroundColor = [UIColor colorWithRed:60/255.5 green:74/255.0 blue:157/255.0 alpha:.8] ;
+//    _mainBtn.backgroundColor = [UIColor colorWithRed:0.996 green:0.824 blue:0.224 alpha:1.000];
     
-    self.borderBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _borderBtn.frame = CGRectMake(self.vi.frame.size.width/2-50, self.textLabel.frame.size.height + self.imageV.frame.size.height + 120, 100, 100);
-    _borderBtn.layer.borderColor = color.CGColor;
-    _borderBtn.layer.borderWidth = 2;
-    _borderBtn.backgroundColor = [UIColor clearColor];
+
 }
 
-//随机颜色的方法
-- (UIColor *) randomColor {
-    //色调
-    CGFloat hue = ( arc4random() % 256 / 256.0 );
-    //饱和度
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;
-    //明亮度
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;
-    
-    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-}
+
 
 - (void) touchChange:(UIButton *)btn
 {
+    self.t = 1 ;
     
-    //    self.player = [AVPlayer playerWithURL:[NSURL URLWithString:self.tagMP3]];
-    //    [self.player play];
-    
+ 
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:self.tagMP3]];
     
     self.player = [AVPlayer playerWithPlayerItem:playerItem];
     [self.player play];
     CMTime duration = playerItem.duration;
     NSUInteger dTotalSeconds = CMTimeGetSeconds(duration);
+    
+    _dSeconds = floor(dTotalSeconds % 3600 % 60);
+    
+    /*
     //    NSUInteger dHours = floor(dTotalSeconds / 3600);
     //    NSUInteger dMinutes = floor(dTotalSeconds % 3600 / 60);
-    NSUInteger dSeconds = floor(dTotalSeconds % 3600 % 60);
     //    NSString *videoDurationText = [NSString stringWithFormat:@"%i:%02i:%02i",dHours, dMinutes,dSeconds];
-    //    NSLog(@"%lu",(unsigned long)dSeconds);
-    [UIView animateWithDuration:dSeconds animations:^{
-        CABasicAnimation * basic = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-        basic.duration = .5;
-        basic.repeatCount = MAXFLOAT;
-        basic.fromValue = [NSNumber numberWithInt:.5];
-        basic.toValue = [NSNumber numberWithInt:1];
-        [self.borderBtn.layer addAnimation:basic forKey:nil];
-    } completion:^(BOOL finished) {
-        //        [btn.layer removeAllAnimations];
-    }];
+  //       NSLog(@"%lu",(unsigned long)_dSeconds);
+    
+    
+//    [UIView animateWithDuration:1 animations:^{
+//        btn.layer.transform = CATransform3DMakeScale(1.2,1.2, 1);
+//    }];
+    */
+    btn.layer.transform = CATransform3DMakeScale(1, 1, 1);
+
+    self.Scaletimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(AnimationScale) userInfo:nil repeats:YES];
+    
+   
+  
 }
 
+-(void)AnimationScale{
 
+    
+    if (_t != _dSeconds  ) {
+        
+        _t ++ ;
+        
+        [UIView animateWithDuration:1 animations:^{
+            _mainBtn.layer.transform = CATransform3DMakeScale(1.1,1.1, 1);
+            
+            } completion:^(BOOL finished) {
+            //        [btn.layer removeAllAnimations];
+            [UIView animateWithDuration:1 animations:^{
+                _mainBtn.layer.transform = CATransform3DMakeScale(1,1, 1);
+            }];
+            
+            
+        }];
+      
+
+    }else {
+        
+//        [self.Scaletimer invalidate];
+//        _timer = nil ;
+        [self.Scaletimer setFireDate:[NSDate distantFuture]];
+        _t = 1 ;
+    }
+
+}
 
 
 
