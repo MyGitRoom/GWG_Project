@@ -4,7 +4,7 @@
 //
 //  Created by lanou on 16/5/3.
 //  Copyright © 2016年 关振发. All rights reserved.
-//
+//http://static.owspace.com/wap/292017.html?device_id=F8AA41A8-AE6B-4AC3-B3F9-5673BF17E6E1&version=iOS_1.1.0&client=iOS
 
 #import "ReadingDetailViewController.h"
 
