@@ -9,6 +9,10 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+
 #import "WidthAndHeight.h"
+
+#import "UIImageView+WebCache.h"
 
 #endif /* PrefixHeader_pch */
