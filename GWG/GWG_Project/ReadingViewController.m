@@ -32,13 +32,8 @@
 {
 
     self.navigationController.navigationBarHidden=NO;
-
-
-//    self.navigationController.navigationBarHidden = NO ;
-//    self.tabBarController.hidesBottomBarWhenPushed = NO ;
     [[[self.navigationController.navigationBar subviews]objectAtIndex:0]setAlpha:0];
 
-//    [[[self.navigationController.navigationBar subviews]objectAtIndex:0]setAlpha:1];
 
     
 }
@@ -52,8 +47,11 @@
     NSString * strFirst = @"http://static.owspace.com/index.php?m=Home&c=Api&a=getList&model=1&p=1&client=iphone&page_id=0&create_time=0&device_id=F8AA41A8-AE6B-4AC3-B3F9-5673BF17E6E1&iOS_version=1.1.0";
     [self loadReadingData:strFirst];
     [self creatFooterRefresh];
+    [self creatHeaderRefresh];
+    
     
 }
+
 #pragma -mark 解析数据
 -(void)loadReadingData:(NSString * )str
 {
@@ -130,6 +128,7 @@
     
 }
 
+#pragma -mark  cell点击方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Reading * read = [_readingArray objectAtIndex:indexPath.row];
@@ -143,7 +142,7 @@
 
 }
 
-#pragma  -mark 下拉刷新的方法
+#pragma  -mark 上拉刷新的方法
 -(void)creatFooterRefresh
 {
     _readingTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
@@ -160,6 +159,23 @@
 -(void)timeStopP
 {
  [_readingTableView.mj_footer endRefreshing];
+}
+#pragma  -mark 下拉刷新的方法
+-(void)creatHeaderRefresh
+{
+    _readingTableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+}
+-(void)loadNewData
+{
+    NSString * strFirst = @"http://static.owspace.com/index.php?m=Home&c=Api&a=getList&model=1&p=1&client=iphone&page_id=0&create_time=0&device_id=F8AA41A8-AE6B-4AC3-B3F9-5673BF17E6E1&iOS_version=1.1.0";
+    [self loadReadingData:strFirst];
+    [_readingTableView  reloadData];
+    
+     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timeStopPP) userInfo:nil repeats:NO];
+}
+-(void)timeStopPP
+{
+    [_readingTableView.header endRefreshing];
 }
 
 @end

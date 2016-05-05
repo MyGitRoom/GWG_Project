@@ -23,7 +23,6 @@
     MainViewController *mainVc = [[MainViewController alloc]init];
     
     MainNavigationController *nav = [[MainNavigationController alloc]initWithRootViewController:mainVc];
-
     self.window.rootViewController = nav ;
     
     
