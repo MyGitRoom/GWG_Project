@@ -166,11 +166,18 @@
 -(void)changePic{
     
     if (_i==5) {
+
+//    self.imagev.image =[UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",_i]];
+    
+//    if (_i==4) {
+
         _i=1;
     }
     self.imagev.image =[UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",_i]];
     _i++ ;
 }
+
+
 
 
 
@@ -351,6 +358,7 @@
 
 
 }
+
 
 
 
