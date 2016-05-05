@@ -64,7 +64,7 @@
         for (NSDictionary * dic1 in array) {
             Reading * read = [[Reading alloc]init];
             [read setValuesForKeysWithDictionary:dic1];
-//            NSLog(@"%@",read.author);
+            NSLog(@"%@",read.share);
             [_readingArray addObject:read];
         }
         

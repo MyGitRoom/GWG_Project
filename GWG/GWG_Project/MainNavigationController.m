@@ -18,20 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationItem.title = @"标题";
-    self.title = @"123" ;
-//    self.bar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, 64)];
-//    
-//    self.bar.backgroundColor = [UIColor colorWithRed:1.000 green:0.094 blue:0.070 alpha:1.000];
-    
-//    self.navigationItem .title = @"标题";
-//    UILabel *la = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, 64)];
-//    la .text = @"标题" ;
-//    [self.bar addSubview:la];
-//    self.navigationController.navigationBar.translucent = NO ;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack ;
-//    self.navigationController.navigationBar.barStyle = uibar
-    
     [self.view addSubview:self.bar];
     
 }

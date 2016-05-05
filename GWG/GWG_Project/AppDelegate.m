@@ -25,10 +25,7 @@
     MainNavigationController *nav = [[MainNavigationController alloc]initWithRootViewController:mainVc];
     self.window.rootViewController = nav ;
     
-    
-
-    
-    
+    nav.navigationBar.barStyle = UIBarStyleBlack;
     
     return YES;
 }

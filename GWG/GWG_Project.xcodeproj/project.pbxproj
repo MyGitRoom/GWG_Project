@@ -72,6 +72,11 @@
 		4E3FE81D1CD9FE0D006E5196 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FE8081CD9FE0D006E5196 /* UIScrollView+MJExtension.m */; };
 		4E3FE81E1CD9FE0D006E5196 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FE80A1CD9FE0D006E5196 /* UIScrollView+MJRefresh.m */; };
 		4E3FE81F1CD9FE0D006E5196 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FE80C1CD9FE0D006E5196 /* UIView+MJExtension.m */; };
+		4E4A0A361CDAF6BC00D4635E /* RPSlidingMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A0A331CDAF6BC00D4635E /* RPSlidingMenuCell.m */; };
+		4E4A0A371CDAF6BC00D4635E /* RPSlidingMenuLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A0A351CDAF6BC00D4635E /* RPSlidingMenuLayout.m */; };
+		4E4EDB671CDADD4F001F6444 /* Technology.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EDB661CDADD4F001F6444 /* Technology.m */; };
+		4E4EDB6A1CDADD7F001F6444 /* TechnologyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EDB691CDADD7F001F6444 /* TechnologyTableViewCell.m */; };
+		4E4EDB6D1CDADDA2001F6444 /* TechnologyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EDB6C1CDADDA2001F6444 /* TechnologyDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +228,16 @@
 		4E3FE80A1CD9FE0D006E5196 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		4E3FE80B1CD9FE0D006E5196 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		4E3FE80C1CD9FE0D006E5196 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		4E4A0A321CDAF6BC00D4635E /* RPSlidingMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPSlidingMenuCell.h; sourceTree = "<group>"; };
+		4E4A0A331CDAF6BC00D4635E /* RPSlidingMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPSlidingMenuCell.m; sourceTree = "<group>"; };
+		4E4A0A341CDAF6BC00D4635E /* RPSlidingMenuLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPSlidingMenuLayout.h; sourceTree = "<group>"; };
+		4E4A0A351CDAF6BC00D4635E /* RPSlidingMenuLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPSlidingMenuLayout.m; sourceTree = "<group>"; };
+		4E4EDB651CDADD4F001F6444 /* Technology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Technology.h; sourceTree = "<group>"; };
+		4E4EDB661CDADD4F001F6444 /* Technology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Technology.m; sourceTree = "<group>"; };
+		4E4EDB681CDADD7F001F6444 /* TechnologyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechnologyTableViewCell.h; sourceTree = "<group>"; };
+		4E4EDB691CDADD7F001F6444 /* TechnologyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TechnologyTableViewCell.m; sourceTree = "<group>"; };
+		4E4EDB6B1CDADDA2001F6444 /* TechnologyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechnologyDetailsViewController.h; sourceTree = "<group>"; };
+		4E4EDB6C1CDADDA2001F6444 /* TechnologyDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TechnologyDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +503,8 @@
 		3F4E865E1CD363E300B9410A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E4EDB651CDADD4F001F6444 /* Technology.h */,
+				4E4EDB661CDADD4F001F6444 /* Technology.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -495,6 +512,12 @@
 		3F4E865F1CD363EB00B9410A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4E4A0A321CDAF6BC00D4635E /* RPSlidingMenuCell.h */,
+				4E4A0A331CDAF6BC00D4635E /* RPSlidingMenuCell.m */,
+				4E4A0A341CDAF6BC00D4635E /* RPSlidingMenuLayout.h */,
+				4E4A0A351CDAF6BC00D4635E /* RPSlidingMenuLayout.m */,
+				4E4EDB681CDADD7F001F6444 /* TechnologyTableViewCell.h */,
+				4E4EDB691CDADD7F001F6444 /* TechnologyTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -504,6 +527,8 @@
 			children = (
 				3FB3D8CC1CD388F50058CC5B /* TechnologyViewController.h */,
 				3FB3D8CD1CD388F50058CC5B /* TechnologyViewController.m */,
+				4E4EDB6B1CDADDA2001F6444 /* TechnologyDetailsViewController.h */,
+				4E4EDB6C1CDADDA2001F6444 /* TechnologyDetailsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -783,7 +808,7 @@
 				TargetAttributes = {
 					3F4E86161CD361EE00B9410A = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = U33AYCW5GV;
+						DevelopmentTeam = L2MRT6YJ79;
 					};
 					3F4E862F1CD361EE00B9410A = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -855,6 +880,7 @@
 				3F418EE91CDA1961004E0BF4 /* MovieModel.m in Sources */,
 				3F418ED41CDA18B4004E0BF4 /* AppDelegate.m in Sources */,
 				4E3FE8191CD9FE0D006E5196 /* MJRefreshNormalHeader.m in Sources */,
+				4E4EDB671CDADD4F001F6444 /* Technology.m in Sources */,
 				3FFE0A8A1CD8D2EB00A63113 /* UIImage+WebP.m in Sources */,
 				3F418EF21CDA1A5D004E0BF4 /* NetWorkRequestManager.m in Sources */,
 				4E3FE8171CD9FE0D006E5196 /* MJRefreshBackStateFooter.m in Sources */,
@@ -877,6 +903,7 @@
 				3FFE0A811CD8D2EB00A63113 /* SDWebImageCompat.m in Sources */,
 				3F418EE61CDA1951004E0BF4 /* TypeOfMovieTableViewCell.m in Sources */,
 				3FFE0A7F1CD8D2EB00A63113 /* NSData+ImageContentType.m in Sources */,
+				4E4EDB6A1CDADD7F001F6444 /* TechnologyTableViewCell.m in Sources */,
 				3F418EE01CDA1920004E0BF4 /* MovieDetailViewController.m in Sources */,
 				4E3FE8151CD9FE0D006E5196 /* MJRefreshBackGifFooter.m in Sources */,
 				3FB3D8CE1CD388F50058CC5B /* TechnologyViewController.m in Sources */,
@@ -889,6 +916,7 @@
 				3F418EE31CDA1941004E0BF4 /* MovieCollectionViewCell.m in Sources */,
 				3F418EDA1CDA1907004E0BF4 /* MovieViewController.m in Sources */,
 				4E3FE81D1CD9FE0D006E5196 /* UIScrollView+MJExtension.m in Sources */,
+				4E4A0A371CDAF6BC00D4635E /* RPSlidingMenuLayout.m in Sources */,
 				3F418EF81CDA1AE8004E0BF4 /* MBProgressHUD.m in Sources */,
 				3FFE0A8C1CD8D2EB00A63113 /* UIImageView+WebCache.m in Sources */,
 				3FFE0A8B1CD8D2EB00A63113 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -899,9 +927,11 @@
 				3FB3D8CB1CD388CD0058CC5B /* RadioViewController.m in Sources */,
 				3FFE0A861CD8D2EB00A63113 /* SDWebImagePrefetcher.m in Sources */,
 				3FFE0A871CD8D2EB00A63113 /* UIButton+WebCache.m in Sources */,
+				4E4EDB6D1CDADDA2001F6444 /* TechnologyDetailsViewController.m in Sources */,
 				4E3FE81E1CD9FE0D006E5196 /* UIScrollView+MJRefresh.m in Sources */,
 				3F418EEC1CDA196F004E0BF4 /* TypeOfMovieModel.m in Sources */,
 				3F418EEF1CDA19B5004E0BF4 /* MainViewController.m in Sources */,
+				4E4A0A361CDAF6BC00D4635E /* RPSlidingMenuCell.m in Sources */,
 				3FFE0A891CD8D2EB00A63113 /* UIImage+MultiFormat.m in Sources */,
 				3FFE0A821CD8D2EB00A63113 /* SDWebImageDecoder.m in Sources */,
 				4E3FE8141CD9FE0D006E5196 /* MJRefreshAutoStateFooter.m in Sources */,
