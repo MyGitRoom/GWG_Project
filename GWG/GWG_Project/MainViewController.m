@@ -25,13 +25,12 @@
 @property (nonatomic, strong) UIView * vi;
 @property (nonatomic, strong) UILabel * textLabel;
 @property (nonatomic, strong) NSMutableArray * msgArray;
-@property (nonatomic, strong) NSString * tagMP3;
-@property (nonatomic ,assign)  NSUInteger dSeconds ;//音频播放的时间
+@property (nonatomic, strong) NSString * tagMP3; //音频的URL
 @property (nonatomic, strong) UIButton * mainBtn;
-@property (nonatomic, strong) UIButton * borderBtn;
+
 
 @property (nonatomic ,strong) NSTimer *Scaletimer ;//创建一个定时器控制按钮动画
-@property (nonatomic ,assign) NSInteger  t ;//记录音频播放时间
+
 @end
 
 @implementation MainViewController
@@ -81,10 +80,9 @@
     effectvi.alpha = .95;
     [self.view addSubview:self.imagev];
     [self.view addSubview:effectvi];
-
     
-
-//    [self.view addSubview:effectiview];
+//    effectvi.hidden = YES ;
+//    self.vi.hidden = YES ;
     
     //创建标签云
 
@@ -167,12 +165,10 @@
 #pragma mark- 切换图片的方法
 -(void)changePic{
     
-    
-    self.imagev.image =[UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",_i]];
-    
-    if (_i==4) {
+    if (_i==5) {
         _i=1;
     }
+    self.imagev.image =[UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",_i]];
     _i++ ;
 }
 
@@ -283,29 +279,42 @@
 
 - (void) touchChange:(UIButton *)btn
 {
-    self.t = 1 ;
     
- 
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:self.tagMP3]];
-    
+
     self.player = [AVPlayer playerWithPlayerItem:playerItem];
+
     [self.player play];
-    CMTime duration = playerItem.duration;
-    NSUInteger dTotalSeconds = CMTimeGetSeconds(duration);
     
-    _dSeconds = floor(dTotalSeconds % 3600 % 60);
     
-    /*
+    //添加监听事件,监测音频是否播放结束
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEndTimeNotification:) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
+  /*
+    
+//    CMTime duration = playerItem.duration;
+//    NSUInteger dTotalSeconds = CMTimeGetSeconds(duration);
+//    
+//    _dSeconds = floor(dTotalSeconds % 3600 % 60);
+//     NSLog(@"%lu",(unsigned long)_dSeconds);
+
+////    
+//    NSLog(@"%lld",duration.value);
+//    NSLog(@"%d",duration.timescale);
+//    _dSeconds = self.player.currentTime.value /self.player.currentTime.timescale ;
+    
+    
+    
     //    NSUInteger dHours = floor(dTotalSeconds / 3600);
     //    NSUInteger dMinutes = floor(dTotalSeconds % 3600 / 60);
     //    NSString *videoDurationText = [NSString stringWithFormat:@"%i:%02i:%02i",dHours, dMinutes,dSeconds];
-  //       NSLog(@"%lu",(unsigned long)_dSeconds);
+         NSLog(@"%lu",(unsigned long)_dSeconds);
     
     
 //    [UIView animateWithDuration:1 animations:^{
 //        btn.layer.transform = CATransform3DMakeScale(1.2,1.2, 1);
 //    }];
     */
+   
     btn.layer.transform = CATransform3DMakeScale(1, 1, 1);
 
     self.Scaletimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(AnimationScale) userInfo:nil repeats:YES];
@@ -314,18 +323,24 @@
   
 }
 
+#pragma mark--播放完成调用该方法
+-(void)handleEndTimeNotification:(NSNotification *)sender
+{
+     //播放结束,释放定时器
+    [self.Scaletimer invalidate];
+}
+
+
+#pragma  mark -Listen me 按钮的动画效果
 -(void)AnimationScale{
 
+
     
-    if (_t != _dSeconds  ) {
-        
-        _t ++ ;
-        
         [UIView animateWithDuration:1 animations:^{
             _mainBtn.layer.transform = CATransform3DMakeScale(1.1,1.1, 1);
             
             } completion:^(BOOL finished) {
-            //        [btn.layer removeAllAnimations];
+        
             [UIView animateWithDuration:1 animations:^{
                 _mainBtn.layer.transform = CATransform3DMakeScale(1,1, 1);
             }];
@@ -334,13 +349,6 @@
         }];
       
 
-    }else {
-        
-//        [self.Scaletimer invalidate];
-//        _timer = nil ;
-        [self.Scaletimer setFireDate:[NSDate distantFuture]];
-        _t = 1 ;
-    }
 
 }
 
