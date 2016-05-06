@@ -14,7 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray * dataDetailArray;
 @property (nonatomic, strong) NSMutableArray * introduceArray;
-@property (nonatomic, assign) BOOL flagBtn;
+
+@property (nonatomic, strong) UIView * introduceView;
 
 @end
 
@@ -37,6 +38,15 @@
         self.introduceArray = [NSMutableArray array];
     }
     return _introduceArray;
+}
+
+- (UIView *) introduceView
+{
+    if (!_introduceView)
+    {
+        self.introduceView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, KScreenWidth, 400)];
+    }
+    return _introduceView;
 }
 
 #pragma mark- 加载视图
@@ -71,6 +81,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self createTableView];
+            [self createView];
         });
         
     } error:^(NSError *error) {
@@ -100,13 +111,17 @@
 #pragma mark- 电台信息view
 - (void) createView
 {
-    
+    IntroduceModel * model = [self.introduceArray lastObject];
+//    UIImageView * imageV = 
+    self.introduceView = [[[NSBundle mainBundle]loadNibNamed:@"IntroduceView" owner:self options:nil]lastObject];
+    UIVisualEffectView *visualView = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    visualView.frame = self.introduceView.frame;
 }
 
 #pragma mark- 创建tableview
 - (void) createTableView
 {
-    self.tab = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
+    self.tab = [[UITableView alloc]initWithFrame:CGRectMake(0, 64+400, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
     [self.view addSubview:_tab];
     _tab.delegate = self;
     _tab.dataSource = self;
@@ -132,17 +147,9 @@
     cell.typeLab.text = [dataD.user objectForKey:@"nick"];
     [cell.picView sd_setImageWithURL:[NSURL URLWithString:dataD.cover_url]];
     cell.countLab.text = [NSString stringWithFormat:@"%@人收听",dataD.count_play];
-//    [cell.playBtn addTarget:self action:@selector(playRadio:) forControlEvents:UIControlEventTouchUpInside];
-//    self.flagBtn = NO;
     return cell;
 }
 
-//button点击事件
-//- (void) playRadio:(UIButton *)btn
-//{
-////    self.flagBtn = YES;
-//    [btn setImage:[UIImage imageNamed:@"start"] forState:UIControlStateNormal];
-//}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
