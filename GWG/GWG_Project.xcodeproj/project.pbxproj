@@ -898,15 +898,7 @@
 				TargetAttributes = {
 					3F4E86161CD361EE00B9410A = {
 						CreatedOnToolsVersion = 7.0.1;
-
 						DevelopmentTeam = 8MDJY7S2H2;
-
-
-						DevelopmentTeam = L2MRT6YJ79;
-
-						DevelopmentTeam = 5LXY5GA6GX;
-
-
 					};
 					3F4E862F1CD361EE00B9410A = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -1203,11 +1195,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GWG_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.----";
-
-				PRODUCT_BUNDLE_IDENTIFIER = fcgfgcgcg;
-
+				PRODUCT_BUNDLE_IDENTIFIER = juijol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1221,11 +1209,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GWG_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.----";
-
-				PRODUCT_BUNDLE_IDENTIFIER = fcgfgcgcg;
-
+				PRODUCT_BUNDLE_IDENTIFIER = juijol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -67,13 +67,15 @@
     eView.frame = CGRectMake(0, kControlBarOriginY, KScreenWidth, kControlBarHeight);
     [self.view addSubview:eView];
     
-    NSLog(@"%@",self.detailMod.sound_url);
+//    NSLog(@"%@",self.detailMod.sound_url);
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //*********初始化返回的按钮**********
+    self.currentIndex = self.detailMod.model_flag;
+    
+    //初始化返回的按钮
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(16, 24, 20, 20);
     [backBtn setImage:[UIImage imageNamed:@"arrowdown.png"] forState:UIControlStateNormal];
@@ -88,8 +90,8 @@
     
     //添加一个观察者，观察我们的应用程序有没有计入后台，一旦进入后台系统就会自动给我们发送一个通知
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadVolume) name:UIApplicationDidEnterBackgroundNotification object:nil];
-    //每次进来默认播放音乐
-    [self reloadMusic];
+
+//    [self reloadMusic];
 }
 
 //点击返回按钮时执行的方法
@@ -127,15 +129,15 @@
 }
 
 //滑动音乐进度条执行的方法
--(void)handleProgressChangeAction:(UISlider *)sender
-{
-    [[GYPlayer sharedplayer] seekToTime:sender.value];
-}
+//-(void)handleProgressChangeAction:(UISlider *)sender
+//{
+//    [[GYPlayer sharedplayer] seekToTime:sender.value];
+//}
 
 #pragma -mark创建暂停播放等按钮的
 -(void)setControlButton
 {
-    //*************创建播放按钮***************
+    //创建播放按钮
     UIButton *playPauseButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     playPauseButton.frame = CGRectMake(0, 0, 30, 30);
@@ -146,7 +148,7 @@
     [playPauseButton addTarget:self action:@selector(handlePlayPauseAction:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:playPauseButton];
     
-    //***********创建上一首的按钮****************
+    //创建上一首的按钮
     UIButton *rewindButton = [UIButton buttonWithType:UIButtonTypeCustom];
     rewindButton.frame = CGRectMake(0, 0, 30, 30);
     rewindButton.center = CGPointMake(kControlBarCenterX-kButtonOffSetX, kControlBarCenterY);
@@ -155,7 +157,7 @@
     [rewindButton addTarget:self action:@selector(handleRewindAction:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:rewindButton];
     
-    //**********创建下一首音乐的按钮****************
+    //创建下一首音乐的按钮
     UIButton *forwordButton =[UIButton buttonWithType:UIButtonTypeCustom];
     forwordButton.frame = CGRectMake(0, 0, 30, 30);
     forwordButton.center = CGPointMake(kControlBarCenterX+kButtonOffSetX, kControlBarCenterY);
@@ -187,6 +189,11 @@
 #pragma -mark点击上一首按钮执行的方法
 -(void)handleRewindAction:(UIButton *)sender
 {
+    if (self.currentIndex == 0)
+    {
+        self.currentIndex = 0;
+    }
+    
     self.currentIndex--;
     [self reloadMusic];
 }
@@ -194,18 +201,19 @@
 #pragma -mark每次切换歌曲的时候把页面的元素全部换成该歌曲的内容
 -(void)reloadMusic
 {
+    DataDetailModel * model = [self.passDataArray objectAtIndex:self.currentIndex];
     //改变旋转大图的背景
-    [self.albumView sd_setImageWithURL:[NSURL URLWithString:self.detailMod.cover_url]];
-    //更新歌名和专辑名字
-    [(UILabel *)[self.view viewWithTag:20086] setText:self.detailMod.title];
-    [(UILabel*)[self.view viewWithTag:20010] setText:[self.detailMod.user objectForKey:@"nick"]];
+    [self.albumView sd_setImageWithURL:[NSURL URLWithString:model.cover_url]];
+    //更新title和电台
+    [(UILabel *)[self.view viewWithTag:20086] setText:model.title];
+    [(UILabel*)[self.view viewWithTag:20010] setText:[model.user objectForKey:@"nick"]];
     //保证每次切换新歌的时候旋转的图片都从正上方看是旋转
     self.albumView.transform  = CGAffineTransformMakeRotation(0);
     //更换音乐播放器，让音乐播放器，播放当前的音乐
     GYPlayer *player = [GYPlayer sharedplayer];
     player.delegate = self;
     [player pause];
-    [player setPlayerWithUrl:self.detailMod.sound_url];
+    [player setPlayerWithUrl:model.sound_url];
     [player play];
 }
 

@@ -48,12 +48,15 @@
         NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 //        NSLog(@"%@",dic);
         NSArray * dataArray = [dic objectForKey:@"data"];
+        self.flag = 0;
         for (NSDictionary * dic in dataArray)
         {
             DataDetailModel * dade = [[DataDetailModel alloc]init];
             [dade setValuesForKeysWithDictionary:dic];
+            dade.model_flag = self.flag;
             [self.dataDetailArray addObject:dade];
-//            NSLog(@"%@",dade.title);
+            self.flag++;
+//            NSLog(@"%ld",(long)dade.model_flag);
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -132,6 +135,7 @@
     }
     musicPlay.currentIndex = index;
     musicPlay.detailMod = [self.dataDetailArray objectAtIndex:index];
+    musicPlay.passDataArray = self.dataDetailArray;
     [self.navigationController pushViewController:musicPlay animated:YES];
 }
 

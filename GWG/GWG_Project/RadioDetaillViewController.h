@@ -17,5 +17,6 @@
 @interface RadioDetaillViewController : UIViewController
 
 @property (nonatomic, strong) NSNumber * passId;
+@property (nonatomic, assign) NSInteger flag;
 
 @end

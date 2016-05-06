@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString * cover_url;
 @property (nonatomic, strong) NSString * sound_url;
 @property (nonatomic, strong) NSString * title;
+@property (nonatomic, assign) NSInteger model_flag;
 @property (nonatomic, strong) NSDictionary * user;
 
 @end

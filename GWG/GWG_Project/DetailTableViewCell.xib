@@ -47,57 +47,51 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwy-ac-0Cm">
-                        <rect key="frame" x="91" y="39" width="105" height="30"/>
+                        <rect key="frame" x="82" y="42" width="105" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="105" id="0xW-Zd-hsO"/>
+                            <constraint firstAttribute="height" constant="30" id="Yxu-Bq-g5R"/>
+                            <constraint firstAttribute="width" constant="105" id="r4j-sl-473"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bx-tY-aEE">
-                        <rect key="frame" x="327" y="38" width="32" height="32"/>
-                        <state key="normal" image="play1.png"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAV-f3-az2">
                         <rect key="frame" x="222" y="39" width="97" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="97" id="aRU-px-FtA"/>
+                            <constraint firstAttribute="height" constant="30" id="iTX-vp-8wd"/>
+                            <constraint firstAttribute="width" constant="97" id="qZ2-Sc-61p"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listen.png" translatesAutoresizingMaskIntoConstraints="NO" id="BFZ-ki-65j">
-                        <rect key="frame" x="88" y="38" width="32" height="32"/>
+                        <rect key="frame" x="91" y="48" width="18" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="18" id="dXL-8A-tUK"/>
+                            <constraint firstAttribute="height" constant="18" id="xsI-MV-lLJ"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="BFZ-ki-65j" secondAttribute="bottom" constant="9" id="3UL-7S-Ri6"/>
-                    <constraint firstItem="jAV-f3-az2" firstAttribute="leading" secondItem="BFZ-ki-65j" secondAttribute="trailing" constant="102" id="5Gc-Yv-GF3"/>
-                    <constraint firstAttribute="trailing" secondItem="0bx-tY-aEE" secondAttribute="trailing" constant="16" id="9We-en-MG0"/>
                     <constraint firstAttribute="bottom" secondItem="Vdy-fN-f8W" secondAttribute="bottom" constant="5" id="Ajz-nW-stP"/>
                     <constraint firstItem="4AS-OB-I8b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Dyq-CM-MC2"/>
-                    <constraint firstAttribute="bottom" secondItem="wwy-ac-0Cm" secondAttribute="bottom" constant="10" id="HEl-23-0V7"/>
-                    <constraint firstItem="BFZ-ki-65j" firstAttribute="top" secondItem="4AS-OB-I8b" secondAttribute="bottom" id="RbD-TP-ARv"/>
-                    <constraint firstItem="jAV-f3-az2" firstAttribute="top" secondItem="4AS-OB-I8b" secondAttribute="bottom" constant="1" id="Yc8-RU-KhE"/>
+                    <constraint firstAttribute="bottom" secondItem="wwy-ac-0Cm" secondAttribute="bottom" constant="7" id="JgP-8v-g38"/>
+                    <constraint firstAttribute="bottom" secondItem="BFZ-ki-65j" secondAttribute="bottom" constant="13" id="Jgp-JT-XhL"/>
                     <constraint firstItem="4AS-OB-I8b" firstAttribute="leading" secondItem="Vdy-fN-f8W" secondAttribute="trailing" constant="11" id="ZMb-gE-4cr"/>
-                    <constraint firstAttribute="bottom" secondItem="jAV-f3-az2" secondAttribute="bottom" constant="10" id="dlP-sU-Ugr"/>
-                    <constraint firstItem="BFZ-ki-65j" firstAttribute="leading" secondItem="Vdy-fN-f8W" secondAttribute="trailing" constant="8" id="dtw-YX-FPf"/>
-                    <constraint firstAttribute="bottom" secondItem="0bx-tY-aEE" secondAttribute="bottom" constant="9" id="gva-j8-bH7"/>
-                    <constraint firstItem="wwy-ac-0Cm" firstAttribute="top" secondItem="4AS-OB-I8b" secondAttribute="bottom" constant="1" id="nOh-c5-dv1"/>
+                    <constraint firstAttribute="trailing" secondItem="jAV-f3-az2" secondAttribute="trailing" constant="56" id="cjl-JU-kei"/>
+                    <constraint firstAttribute="bottom" secondItem="jAV-f3-az2" secondAttribute="bottom" constant="10" id="kBt-iC-f1A"/>
+                    <constraint firstItem="BFZ-ki-65j" firstAttribute="leading" secondItem="Vdy-fN-f8W" secondAttribute="trailing" constant="11" id="nV2-De-CD1"/>
                     <constraint firstAttribute="trailing" secondItem="4AS-OB-I8b" secondAttribute="trailing" constant="8" id="ntB-bu-irK"/>
-                    <constraint firstItem="0bx-tY-aEE" firstAttribute="leading" secondItem="jAV-f3-az2" secondAttribute="trailing" constant="8" id="oQW-gb-8DM"/>
                     <constraint firstItem="Vdy-fN-f8W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qNt-xN-Kd8"/>
                     <constraint firstItem="Vdy-fN-f8W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="rLo-ZR-0QR"/>
-                    <constraint firstItem="wwy-ac-0Cm" firstAttribute="leading" secondItem="Vdy-fN-f8W" secondAttribute="trailing" constant="11" id="tfN-AV-zIP"/>
-                    <constraint firstItem="0bx-tY-aEE" firstAttribute="top" secondItem="4AS-OB-I8b" secondAttribute="bottom" id="xbb-Dj-cd8"/>
+                    <constraint firstItem="wwy-ac-0Cm" firstAttribute="leading" secondItem="Vdy-fN-f8W" secondAttribute="trailing" constant="2" id="uOQ-xx-dGN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="countLab" destination="wwy-ac-0Cm" id="pMU-ac-7bh"/>
                 <outlet property="picView" destination="Vdy-fN-f8W" id="spX-UU-2lk"/>
-                <outlet property="playBtn" destination="0bx-tY-aEE" id="KIA-qR-MVv"/>
                 <outlet property="titleLab" destination="4AS-OB-I8b" id="01c-VH-X4w"/>
                 <outlet property="typeLab" destination="jAV-f3-az2" id="qQr-iI-lyJ"/>
             </connections>
@@ -106,6 +100,5 @@
     </objects>
     <resources>
         <image name="listen.png" width="32" height="32"/>
-        <image name="play1.png" width="32" height="32"/>
     </resources>
 </document>

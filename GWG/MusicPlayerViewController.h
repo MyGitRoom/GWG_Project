@@ -15,5 +15,6 @@
 //定义一个index用于接收当前需要播放第几首音乐
 @property (nonatomic) NSInteger currentIndex;
 @property (nonatomic, strong) DataDetailModel * detailMod;
+@property (nonatomic, strong) NSMutableArray * passDataArray; 
 
 @end
