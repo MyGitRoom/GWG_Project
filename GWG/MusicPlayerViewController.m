@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSMutableArray * settings;
 @property (nonatomic, strong) UIImageView * albumView;
+@property (nonatomic, strong) UIImageView * imageV;
 
 @end
 
@@ -45,10 +46,9 @@
 - (void) loadView
 {
     //创建背景视图并且设置毛玻璃效果
-    UIImageView * imageV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    imageV.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.detailMod.cover_url]]];
-    self.view = imageV;
-        self.view.userInteractionEnabled = YES;
+    self.imageV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.view = _imageV;
+    self.view.userInteractionEnabled = YES;
     //毛玻璃效果
     UIVisualEffectView *visualView = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
     visualView.frame = self.view.frame;
@@ -91,7 +91,7 @@
     //添加一个观察者，观察我们的应用程序有没有计入后台，一旦进入后台系统就会自动给我们发送一个通知
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadVolume) name:UIApplicationDidEnterBackgroundNotification object:nil];
 
-//    [self reloadMusic];
+    [self firstReloadMusic];
 }
 
 //点击返回按钮时执行的方法
@@ -204,6 +204,7 @@
     DataDetailModel * model = [self.passDataArray objectAtIndex:self.currentIndex];
     //改变旋转大图的背景
     [self.albumView sd_setImageWithURL:[NSURL URLWithString:model.cover_url]];
+    [_imageV sd_setImageWithURL:[NSURL URLWithString:model.cover_url]];
     //更新title和电台
     [(UILabel *)[self.view viewWithTag:20086] setText:model.title];
     [(UILabel*)[self.view viewWithTag:20010] setText:[model.user objectForKey:@"nick"]];
@@ -214,6 +215,24 @@
     player.delegate = self;
     [player pause];
     [player setPlayerWithUrl:model.sound_url];
+    [player play];
+}
+
+- (void) firstReloadMusic
+{
+    [_imageV sd_setImageWithURL:[NSURL URLWithString:self.detailMod.cover_url]];
+    //改变旋转大图的背景
+    [self.albumView sd_setImageWithURL:[NSURL URLWithString:self.detailMod.cover_url]];
+    //更新歌名和专辑名字
+    [(UILabel *)[self.view viewWithTag:20086] setText:self.detailMod.title];
+    [(UILabel*)[self.view viewWithTag:20010] setText:[self.detailMod.user objectForKey:@"nick"]];
+    //保证每次切换新歌的时候旋转的图片都从正上方看是旋转
+    self.albumView.transform  = CGAffineTransformMakeRotation(0);
+    GYPlayer *player = [GYPlayer sharedplayer];
+    
+    player.delegate = self;
+    [player pause];
+    [player setPlayerWithUrl:self.detailMod.sound_url];
     [player play];
 }
 
@@ -235,10 +254,6 @@
     }
 }
 
-#pragma mark - Table view 代理方法
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    return 1;
-//}
+
 
 @end

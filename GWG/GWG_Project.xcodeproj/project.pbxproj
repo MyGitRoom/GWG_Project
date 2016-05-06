@@ -12,6 +12,9 @@
 		3F1B88941CDA33DB0071E862 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88931CDA33DB0071E862 /* MyTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B88971CDA360F0071E862 /* RadioDetaillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88961CDA360F0071E862 /* RadioDetaillViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3F1B889A1CDA39B60071E862 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B88991CDA39B60071E862 /* Message.m */; settings = {ASSET_TAGS = (); }; };
+		3F2A9F121CDC8AAC00233BEB /* IntroduceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A9F111CDC8AAC00233BEB /* IntroduceModel.m */; settings = {ASSET_TAGS = (); }; };
+		3F2A9F151CDC91AC00233BEB /* IntroduceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A9F141CDC91AC00233BEB /* IntroduceView.m */; settings = {ASSET_TAGS = (); }; };
+		3F2A9F171CDC91BE00233BEB /* IntroduceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A9F161CDC91BE00233BEB /* IntroduceView.xib */; settings = {ASSET_TAGS = (); }; };
 		3F418ED41CDA18B4004E0BF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED31CDA18B4004E0BF4 /* AppDelegate.m */; };
 		3F418ED71CDA18C9004E0BF4 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED61CDA18C9004E0BF4 /* MainNavigationController.m */; };
 		3F418EDA1CDA1907004E0BF4 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F418ED91CDA1907004E0BF4 /* MovieViewController.m */; };
@@ -129,6 +132,11 @@
 		3F1B88961CDA360F0071E862 /* RadioDetaillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetaillViewController.m; sourceTree = "<group>"; };
 		3F1B88981CDA39B60071E862 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		3F1B88991CDA39B60071E862 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		3F2A9F101CDC8AAC00233BEB /* IntroduceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroduceModel.h; sourceTree = "<group>"; };
+		3F2A9F111CDC8AAC00233BEB /* IntroduceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroduceModel.m; sourceTree = "<group>"; };
+		3F2A9F131CDC91AC00233BEB /* IntroduceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroduceView.h; sourceTree = "<group>"; };
+		3F2A9F141CDC91AC00233BEB /* IntroduceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroduceView.m; sourceTree = "<group>"; };
+		3F2A9F161CDC91BE00233BEB /* IntroduceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroduceView.xib; sourceTree = "<group>"; };
 		3F418ED21CDA18B4004E0BF4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F418ED31CDA18B4004E0BF4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3F418ED51CDA18C9004E0BF4 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
@@ -609,6 +617,9 @@
 				3F9B51821CDAEDF80037C869 /* DetailTableViewCell.h */,
 				3F9B51831CDAEDF80037C869 /* DetailTableViewCell.m */,
 				3F9B51841CDAEDF80037C869 /* DetailTableViewCell.xib */,
+				3F2A9F131CDC91AC00233BEB /* IntroduceView.h */,
+				3F2A9F141CDC91AC00233BEB /* IntroduceView.m */,
+				3F2A9F161CDC91BE00233BEB /* IntroduceView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -631,6 +642,8 @@
 			children = (
 				3F1B888F1CDA33D00071E862 /* DataModel.h */,
 				3F1B88901CDA33D00071E862 /* DataModel.m */,
+				3F2A9F101CDC8AAC00233BEB /* IntroduceModel.h */,
+				3F2A9F111CDC8AAC00233BEB /* IntroduceModel.m */,
 				3F9B51741CDADC4D0037C869 /* DataDetailModel.h */,
 				3F9B51751CDADC4D0037C869 /* DataDetailModel.m */,
 			);
@@ -936,6 +949,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FEF73AF1CDB61390072A0D7 /* listen.png in Resources */,
+				3F2A9F171CDC91BE00233BEB /* IntroduceView.xib in Resources */,
 				3F7E73141CD394B400A2AB90 /* 4.jpg in Resources */,
 				3F9B51861CDAEDF80037C869 /* DetailTableViewCell.xib in Resources */,
 				3F9B517F1CDAE44E0037C869 /* play1.png in Resources */,
@@ -999,6 +1013,8 @@
 				3F418ED71CDA18C9004E0BF4 /* MainNavigationController.m in Sources */,
 				3F4E861C1CD361EE00B9410A /* main.m in Sources */,
 				3FFE0A841CD8D2EB00A63113 /* SDWebImageDownloaderOperation.m in Sources */,
+				3F2A9F151CDC91AC00233BEB /* IntroduceView.m in Sources */,
+				3F2A9F121CDC8AAC00233BEB /* IntroduceModel.m in Sources */,
 				4E3FE8111CD9FE0D006E5196 /* MJRefreshHeader.m in Sources */,
 				4E3FE81C1CD9FE0D006E5196 /* MJRefreshConst.m in Sources */,
 				3FB3D8C81CD3886D0058CC5B /* ReadingViewController.m in Sources */,

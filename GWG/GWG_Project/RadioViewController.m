@@ -61,7 +61,7 @@
     
     
     DataModel * datmo = [_dataArray objectAtIndex:indexPath.row];
-    cell.imageV.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:datmo.cover_url]]];
+    [cell.imageV sd_setImageWithURL:[NSURL URLWithString:datmo.cover_url]];
     cell.titleLab.text = datmo.title;
     cell.introLab.text = datmo.intro;
 //    cell.countLab.text = datmo.cover_path;

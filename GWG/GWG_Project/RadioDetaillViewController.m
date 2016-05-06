@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UITableView * tab;
 
 @property (nonatomic, strong) NSMutableArray * dataDetailArray;
+@property (nonatomic, strong) NSMutableArray * introduceArray;
 @property (nonatomic, assign) BOOL flagBtn;
 
 @end
@@ -27,6 +28,15 @@
         self.dataDetailArray = [NSMutableArray array];
     }
     return _dataDetailArray;
+}
+
+- (NSMutableArray *) introduceArray
+{
+    if (!_introduceArray)
+    {
+        self.introduceArray = [NSMutableArray array];
+    }
+    return _introduceArray;
 }
 
 #pragma mark- 加载视图
@@ -66,6 +76,31 @@
     } error:^(NSError *error) {
         NSLog(@"Error:%@",error);
     }];
+    
+    
+    NSDictionary * parDic2 = [NSDictionary dictionaryWithObject:@"2.0.5" forKey:@"app_version"];
+    [NetWorlRequestManager requestWithType:POST urlString:[DETAILDURL stringByAppendingPathComponent:[NSString stringWithFormat:@"&collect_id=%@",[self.passId stringValue]]] ParDic:parDic2 dicOfHeader:headerDic finish:^(NSData *data) {
+//        NSLog(@"%@",data);
+        
+        NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//        NSLog(@"%@",dic);
+        NSDictionary * dataDic = [dic objectForKey:@"data"];
+        IntroduceModel * introduce = [[IntroduceModel alloc]init];
+        [introduce setValuesForKeysWithDictionary:dataDic];
+        [self.introduceArray addObject:introduce];
+//        NSLog(@"%@",introduce.tags);
+        
+    } error:^(NSError *error) {
+        
+    }];
+    
+    
+}
+
+#pragma mark- 电台信息view
+- (void) createView
+{
+    
 }
 
 #pragma mark- 创建tableview
