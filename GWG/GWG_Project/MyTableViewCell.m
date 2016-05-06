@@ -34,6 +34,8 @@
 - (void) layoutSubviews
 {
     self.imageV.frame = CGRectMake(5, 5, 110, 110);
+    self.imageV.layer.cornerRadius = 55;
+    self.imageV.layer.masksToBounds = YES;
     
     self.titleLab.frame = CGRectMake(120, 10, 250, 40);
     self.titleLab.font = [UIFont boldSystemFontOfSize:18];

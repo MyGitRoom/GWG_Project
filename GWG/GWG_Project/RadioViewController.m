@@ -40,8 +40,8 @@
 #pragma mark- 创建tableview
 - (void) createTableView
 {
-    CGRect frame = [UIScreen mainScreen].bounds;
-    self.tab = [[UITableView alloc]initWithFrame:frame style:UITableViewStylePlain];
+//    CGRect frame = [UIScreen mainScreen].bounds;
+    self.tab = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
     [self.view addSubview:_tab];
     _tab.delegate = self;
     _tab.dataSource = self;
@@ -61,7 +61,7 @@
     
     
     DataModel * datmo = [_dataArray objectAtIndex:indexPath.row];
-    cell.imageV.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:datmo.cover_url]]];
+    [cell.imageV sd_setImageWithURL:[NSURL URLWithString:datmo.cover_url]];
     cell.titleLab.text = datmo.title;
     cell.introLab.text = datmo.intro;
 //    cell.countLab.text = datmo.cover_path;
@@ -76,11 +76,13 @@
     return cell;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArray.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return 120;
 }
 
@@ -90,6 +92,18 @@
     RadioDetaillViewController * detail = [[RadioDetaillViewController alloc]init];
     detail.passId = dat.identifier;
     [self.navigationController pushViewController:detail animated:YES];
+}
+
+//给cell添加动画
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //设置Cell的动画效果为3D效果
+    //设置x和y的初始值为0.1；
+    cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);
+    //x和y的最终值为1
+    [UIView animateWithDuration:1 animations:^{
+        cell.layer.transform = CATransform3DMakeScale(1, 1, 1);
+    }];
 }
 
 /*
