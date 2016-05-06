@@ -97,17 +97,17 @@
     cell.typeLab.text = [dataD.user objectForKey:@"nick"];
     [cell.picView sd_setImageWithURL:[NSURL URLWithString:dataD.cover_url]];
     cell.countLab.text = [NSString stringWithFormat:@"%@人收听",dataD.count_play];
-    [cell.playBtn addTarget:self action:@selector(playRadio:) forControlEvents:UIControlEventTouchUpInside];
-    self.flagBtn = NO;
+//    [cell.playBtn addTarget:self action:@selector(playRadio:) forControlEvents:UIControlEventTouchUpInside];
+//    self.flagBtn = NO;
     return cell;
 }
 
 //button点击事件
-- (void) playRadio:(UIButton *)btn
-{
-//    self.flagBtn = YES;
-    [btn setImage:[UIImage imageNamed:@"start"] forState:UIControlStateNormal];
-}
+//- (void) playRadio:(UIButton *)btn
+//{
+////    self.flagBtn = YES;
+//    [btn setImage:[UIImage imageNamed:@"start"] forState:UIControlStateNormal];
+//}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
